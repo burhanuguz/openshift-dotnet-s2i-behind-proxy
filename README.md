@@ -1,0 +1,1 @@
+# openshift-dotnet-s2i-behind-proxy
