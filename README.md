@@ -17,20 +17,20 @@ In this explanation you will have chance to use **Red Hat's own images**. These 
  In this example build will be done in **example project**(namespace).
  - Switch to **Developer Tab** and click to **From Catalog**
  
- [https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/1.png](https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/1.png)
+ ![https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/1.png](https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/1.png)
  - Select **.NET Core** and then **Instantiate Template**
  
- [https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/2.png](https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/2.png)
- [https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/3.png](https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/3.png)
- - As an example [https://github.com/OktaySavdi/chat_example](https://github.com/OktaySavdi/chat_example) project will be built.
+ ![https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/2.png](https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/2.png)
+ ![https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/3.png](https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/3.png)
+ - As an example ![https://github.com/OktaySavdi/chat_example](https://github.com/OktaySavdi/chat_example) project will be built.
  
-[https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/4.png](https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/4.png)
+![https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/4.png](https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/4.png)
 - Scroll down and uncheck **Launch the first build when the build configuration is created** because the first one would fail and put environment variable as in the picture.
 
 ```bash
 SSL_CERT_DIR=/opt/app-root/ssl_dir
 ```
-[https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/5.png](https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/5.png)
+![https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/5.png](https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/5.png)
 - In the building stage image will call for the script in this path **/usr/libexec/s2i/assemble**. 
   - What will we do is creating our own script and name it as **assemble**
   - In this script **/opt/app-root/ssl_dir** directory will be created and extra CA's to be trusted will be added here.
@@ -62,14 +62,14 @@ EOF
 - **The assemble script** should be put somewhere reachable from your Cluster. In this example **the assemble script** can be accessed via URL. Here is the official link for [s2i scripts and accessing them](https://docs.openshift.com/container-platform/4.5/builds/build-strategies.html#images-create-s2i-scripts_build-strategies)
 - To put the link select **Build tab** and click the **build** that created.
 
-[https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/6.png](https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/6.png) 
+![https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/6.png](https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/6.png) 
 - Select **YAML tab** and put the link of the directory contains the script to **spec.strategy.sourceStrategy.scripts** part.
  
- [https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/7.png](https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/7.png)
+ ![https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/7.png](https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/7.png)
 - After all those steps click **Start Build** and in the opened page select **Logs** and watch. You will see that maven won't give error and build process will be finished with success after that.
  
- [https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/8.png](https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/8.png)
- [https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/9.png](https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/9.png)
+ ![https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/8.png](https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/8.png)
+ ![https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/9.png](https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/9.png)
 
 
 Using this method you get to use Red Hat's updated and supported image always. There is no need create a custom image for certificate and updating it always.
