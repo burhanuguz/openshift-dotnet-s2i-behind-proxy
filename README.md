@@ -42,6 +42,7 @@ SSL_CERT_DIR=/opt/app-root/ssl_dir
 
 mkdir -p $DOTNET_SSL_CERT_DIR
 
+cat <<EOF > /tmp/cert1.crt
 -----BEGIN CERTIFICATE-----
 ................................................................
 ................................................................
