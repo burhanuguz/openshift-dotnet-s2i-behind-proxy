@@ -1,4 +1,4 @@
-# Openshift s2i behind Corporate Proxy (JBoss EAP 7.2 from Developer Catalog)
+# Openshift s2i behind Corporate Proxy (.NET Core from Developer Catalog)
 
 ## Prerequisites
 - Openshift Cluster behind proxy
@@ -67,7 +67,7 @@ EOF
 - Select **YAML tab** and put the link of the directory contains the script to **spec.strategy.sourceStrategy.scripts** part.
  
  ![https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/7.png](https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/7.png)
-- After all those steps click **Start Build** and in the opened page select **Logs** and watch. You will see that maven won't give error and build process will be finished with success after that.
+- After all those steps click **Start Build** and in the opened page select **Logs** and watch. You will see that .NET Core won't give error and build process will be finished with success after that.
  
  ![https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/8.png](https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/8.png)
  ![https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/9.png](https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/9.png)
