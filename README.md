@@ -22,7 +22,7 @@ In this explanation you will have chance to use **Red Hat's own images**. These 
  
  ![https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/2.png](https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/2.png)
  ![https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/3.png](https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/3.png)
- - As an example ![https://github.com/OktaySavdi/chat_example](https://github.com/OktaySavdi/chat_example) project will be built.
+ - As an example [https://github.com/OktaySavdi/chat_example](https://github.com/OktaySavdi/chat_example) project will be built.
  
 ![https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/4.png](https://github.com/burhanuguz/openshift-dotnet-s2i-behind-proxy/blob/master/pictures/4.png)
 - Scroll down and uncheck **Launch the first build when the build configuration is created** because the first one would fail and put environment variable as in the picture.
