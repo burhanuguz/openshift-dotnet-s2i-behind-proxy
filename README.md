@@ -5,7 +5,7 @@
 - Internal Image registry (to access the images you built in cluster)
 
 ## Overview
-When behind proxy, .NET Corebuild from **Developer Catalog(e.g .NET Core) ** will give error that nuget packages can not download because there are **no secure connection to repo**. 
+When behind proxy, .NET Corebuild from **Developer Catalog(e.g .NET Core)** will give error that nuget packages can not download because there are **no secure connection to repo**. 
 - To solve this problem you can make **your own builder image** putting your company's proxy certificate in it, but in the end you will not get to use **Red Hat's official images** and updates to those images. You will have to update your own images always . 
 
 ### Initial Script to trust company's CA certificates
