@@ -12,19 +12,23 @@ When behind proxy, **.NET Core** build from **Developer Catalog** will give erro
 ### Creating Build Config
 1. First thing is to set certificates.
 ```bash
-cat <<EOF > /tmp/ca-bundle.crt
+cat <<EOF > /tmp/cert1.crt
 # First CA to be trusted
 -----BEGIN CERTIFICATE-----
 ................................................................
 ................................................................
 -----END CERTIFICATE-----
+EOF
 
+cat <<EOF > /tmp/cert1.crt
 # Second CA to be trusted
 -----BEGIN CERTIFICATE-----
 ................................................................
 ................................................................
 -----END CERTIFICATE-----
+EOF
 
+cat <<EOF > /tmp/cert1.crt
 # Third CA to be trusted
 -----BEGIN CERTIFICATE-----
 ................................................................
@@ -34,7 +38,7 @@ EOF
 ```
 2. Create a **Config Map** that contains this certificate chain.
 ```bash
-oc create configmap user-ca-bundle --from-file=ca-bundle.crt=/tmp/ca-bundle.crt
+oc create configmap user-ca-bundle --from-file=/tmp/cert1.crt --from-file=/tmp/cert2.crt --from-file=/tmp/cert3.crt
 ```
 3. Create the Dockerfile.
 ```bash
@@ -43,7 +47,7 @@ FROM
 # Switch to root for package installs and copying files
 USER 0
 # Import corporation self signed certificate
-COPY ./ca-bundle.crt /etc/pki/ca-trust/source/anchors/
+COPY ./*.crt /etc/pki/ca-trust/source/anchors/
 RUN update-ca-trust
 # Run container by default as user with id 1001 (default)
 USER 1001
