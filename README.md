@@ -93,7 +93,7 @@ oc get imagestreamtags.image.openshift.io -n openshift dotnet:2.1 -o json | jq '
 - The result is below
 ```bash
 {
-  "description": "Build and run .NET Core 2.1 applications on RHEL 7. For more information about using this builder image, including OpenShift considerations, see https://github.com/redhat-developer/s2i-dotnetcore/tree/master/2.1/bui
+  "description": "Build and run .NET Core 2.1 applications on RHEL 7. For more information about using this builder image, including OpenShift considerations, see https://github.com/redhat-developer/s2i-dotnetcore/tree/master/2.1/build/README.md.",
   "iconClass": "icon-dotnet",
   "openshift.io/display-name": ".NET Core 2.1",
   "sampleContextDir": "app",
